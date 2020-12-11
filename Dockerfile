@@ -1,9 +1,11 @@
 FROM node:12
 
 WORKDIR /app
-COPY . . 
-ENV PORT 80
+ENV PORT 8000
 
+COPY . .
 RUN npm install
-RUN npm run-script build
-CMD npm start
+RUN npm run build
+EXPOSE 8000
+
+CMD ["npm", "start"]
